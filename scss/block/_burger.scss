@@ -1,0 +1,47 @@
+.burger {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s all;
+  z-index: 50;
+  display: none;
+
+  @include desktop {
+    display: block;
+  }
+
+
+  &__span {
+    position: absolute;
+    background-color: black;
+    width: 30px;
+    height: 2px;
+    top: 0;
+    left: 0;
+    transition: transform 0.3s linear;
+  }
+
+  &__span:nth-last-child(1) {
+    transform: translateX(0px);
+  }
+
+  &__span:nth-last-child(2) {
+    transform: translateY(10px) translateX(-10px);
+  }
+
+  &__span:nth-last-child(3) {
+    transform: translateY(20px);
+  }
+}
+  
+.burger.active .burger__span:nth-last-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+
+.burger.active .burger__span:nth-last-child(2) {
+  transform: translateX(1000px);
+}
+
+.burger.active .burger__span:nth-last-child(3) {
+  transform: translateY(10px) rotate(-45deg);;
+}

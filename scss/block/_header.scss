@@ -1,0 +1,242 @@
+.header {
+  padding-top: 30px;
+  padding-bottom: 13px;
+
+  &__flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+  }
+
+  &__logo-wrap {
+    display: flex;
+    flex-direction: column;
+    margin-right: 260px;
+
+    @include desktop-full  {
+      margin-right: 0px;
+    }
+  }
+
+  &__logo {
+    color: var(--color-logo);
+    font-family: "Open Sans";
+    font-size: 24.58px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+  }
+
+  &__logo-desc {
+    font-size: 11px;
+  }
+  
+  &__contact {
+    font-style: normal;
+    margin-right: 32px;
+
+    @include desktop-full  {
+      margin-right: 20px;
+    }
+  }
+  
+  &__phone {
+    position: relative;
+    font-size: 18px;
+    font-weight: 700;
+
+    @include desktop-full  {
+      display: none;
+    }
+
+
+    &:before {
+      position: absolute;
+      content: '';
+      display: block;
+      width: 0%;
+      height: 1px;
+      top: 24px;
+      left: 0;
+      background: var(--color-black);
+      transition: width 0.4s ease-in-out;
+    }
+
+    &:focus::before {
+      width: 100%;
+    }
+
+    &:hover::before {
+      width: 100%;
+    }
+  }
+
+  &__phone-1 {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    
+  } 
+
+  &__phone-svg {
+    width: 26px;
+    height: 26px;
+    fill: var(--color-white);
+    stroke: var(--color-logo);
+    display: none;
+
+    @include desktop  {
+      display: block;
+      cursor: pointer;
+    }
+  }
+
+  &__phone-tel {
+    display: none;
+
+    @include desktop-full  {
+      display: block;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    @include mobile  {
+      display: none;
+    }
+  }
+
+}
+
+  .menu {
+    display: flex;
+    align-items: center;
+    position: relative;
+  
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    @include desktop {
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 40%;
+      height: 100%;
+      top: -100%;
+      right: 0;
+      background: rgba(255, 255, 255, 0.9);
+      z-index: 20;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.4s linear
+    }
+
+    @include mobile {
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding-top: 300px;
+      width: 100%;
+      top: -100%;
+      right: 0;
+      background: rgba(255, 255, 255, 0.9);
+      z-index: 20;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.4s linear
+    }
+
+  }
+  
+  &__item {
+    padding: 5px 0;
+    margin-right: 50px;
+
+    @include desktop  {
+      margin-right: 0;
+    }
+    &:nth-last-child(2) {
+      @include desktop  {
+        margin-right: 0;
+      }
+      margin-right: 56px;
+    }
+    
+
+    &:last-child {
+      margin-right: 0px;
+    }
+    }
+    
+  &__link {
+    position: relative;
+    display: block;
+    font-size: 14px;
+    text-transform: uppercase;
+
+    @include mobile {
+      font-size: 26px;
+    }
+
+    &:before {
+      position: absolute;
+      content: '';
+      display: block;
+      width: 0%;
+      height: 1px;
+      top: 20px;
+      left: 0;
+      background: var(--color-black);
+      transition: width 0.4s ease-in-out;
+    }
+
+    &:focus::before {
+      width: 100%;
+    }
+
+    &:hover::before {
+      width: 100%;
+    }
+  
+  &_btn {
+    display: block;
+    font-size: 14px;
+    text-transform: uppercase;
+
+    @include mobile {
+      font-size: 26px;
+    }
+    }
+  }
+
+  &__btn {
+    color: var(--color-white);
+    font-size: 14px;;
+    text-transform: uppercase;
+    transition:  background 0.25s linear, color 0.25s linear, outline 0.25s linear;
+    
+    @include mobile {
+      font-size: 26px;
+      color: black;
+      background: transparent;
+    }
+
+    &:hover {
+      background: var(--color-white);
+      color: var(--color-logo);
+      outline: 1px solid  var(--color-logo);
+    }
+  }
+
+} 
+
+.menu.active .menu__list {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(100%);
+}

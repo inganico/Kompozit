@@ -1,0 +1,39 @@
+
+.advantages {
+  padding-bottom: 115px;
+
+&__title {
+  margin-bottom: 65px;
+}
+
+&__list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around
+}
+
+&__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 10px;
+}
+
+&__img {
+  display: block;
+  object-fit: cover;
+}
+
+&__desc {
+  font-size: 16px;
+  max-width: 165px;
+  text-align: center;
+
+  @include desktop {
+    font-size: 12px;
+  }
+  }
+}
+

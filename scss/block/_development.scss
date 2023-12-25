@@ -1,0 +1,28 @@
+.development {
+  padding-bottom: 92px;
+
+  &__title {
+    font-size: 36px;
+    font-weight: 300;
+    text-align: center;
+    padding: 20px 200px;
+    margin-bottom: 32px;
+
+    @include desktop {
+      font-size: 24px;
+      padding: 20px 20px;
+    }
+  }
+  
+  &__desc {
+    @include desktop {
+      font-size: 16px;
+      text-indent: 0px;
+      text-align: center;
+    }
+    font-size: 18px;
+    font-weight: 300;
+    text-indent: 25px
+  }
+}
+  
